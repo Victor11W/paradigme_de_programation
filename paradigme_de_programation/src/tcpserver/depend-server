@@ -1,0 +1,14 @@
+server.o: server.cpp tcpserver.h ccsocket.h ../../include/basic.h \
+ ../../include/video.h ../../include/basic.h ../../include/film.h \
+ ../../include/video.h ../../include/photo.h ../../include/groupe.h \
+ ../../include/createandmodify.h ../../include/groupe.h \
+ ../../include/film.h ../../include/photo.h
+tcpserver.o: tcpserver.cpp tcpserver.h ccsocket.h
+ccsocket.o: ccsocket.cpp ccsocket.h
+createandmodify.o: ../createandmodify.cpp ../../include/createandmodify.h \
+ ../../include/basic.h ../../include/groupe.h ../../include/video.h \
+ ../../include/film.h ../../include/photo.h
+basic.o: ../basic.cpp ../../include/basic.h
+groupe.o: ../groupe.cpp ../../include/groupe.h ../../include/basic.h \
+ ../../include/video.h ../../include/film.h ../../include/video.h \
+ ../../include/photo.h
