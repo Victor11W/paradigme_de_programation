@@ -26,6 +26,8 @@ public:
     void Affiche(std::ostream& out);
 
     ~Groupe();
+
+    void save(std::ostream& out);
 };
 
 

@@ -128,6 +128,23 @@ public:
         }
     };
 
+    void save(std::ostream& out) const{
+        out << "{";
+        out << "\"type\": \"Film\", ";
+        out << "\"name\": \"" << this->getName() << "\", ";
+        out << "\"filename\": \"" << this->getFileName() << "\", ";
+        out << "\"duree\": " << this->getDuree() << ", ";
+        out << "\"number_chapter\": " << this->number_chapter << ", ";
+        out << "\"chapter\": [";
+        for (int i = 0; i < this->number_chapter; ++i) {
+            out << this->chapter[i];
+            if (i < this->number_chapter - 1) {
+                out << ", ";
+            }
+        }
+        out << "]";
+        out << "}";
+    }
 };
 
 #endif // FILM_H

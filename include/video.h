@@ -34,10 +34,18 @@ public:
         system(arg.data());
     }
 
-    void printAttribut(std::ostream& out){ {
+    void printAttribut(std::ostream& out){ 
         out << "Nom : " << this->getName() << std::endl;
         out << "Durée : " << this->getDuree() << " secondes" << std::endl;
     }
+
+    void save(std::ostream& out) const{
+        out << "{";
+        out << "\"type\": \"Video\", ";
+        out << "\"name\": \"" << this->getName() << "\", ";
+        out << "\"filename\": \"" << this->getFileName() << "\", ";
+        out << "\"duree\": " << this->getDuree();
+        out << "}";
 };};
 
 #endif // VIDEO_H

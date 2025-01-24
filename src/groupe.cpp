@@ -64,3 +64,21 @@ void Groupe::Affiche(std::ostream& out) {
         AfficheElement(i,out);
     }
 }
+
+void Groupe::save(std::ostream& out) {
+    out << "{";
+    out << "\"type\": \"Groupe\", ";
+    out << "\"name\": \"" << this->Name << "\", ";
+    out << "\"List\": [";
+    int k = List.size();
+    int i = 0;
+    for (auto& element : List) {
+        element->save(out);
+        if (i < k - 1) {
+            out << ", ";
+        }
+        i++;
+    }
+    out << "]";
+    out << "}";
+}

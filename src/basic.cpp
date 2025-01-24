@@ -32,3 +32,8 @@ Basic::~Basic(){}
 
 void Basic::printAttribut(std::ostream& out) const{
 }
+
+void Basic::save(std::ostream& out) const{
+}
+
+

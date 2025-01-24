@@ -22,6 +22,7 @@ public:
     virtual ~Basic();
     virtual void play() const = 0;  // Méthode virtuelle pure
     virtual void printAttribut(std::ostream& out) const;
+    virtual void save(std::ostream& out) const = 0;
 };
 
 #endif // BASIC_H

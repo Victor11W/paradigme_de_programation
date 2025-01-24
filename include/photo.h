@@ -10,8 +10,6 @@ private:
     int longitude;
 
 
-
-
 public:
 
     Photo() : Basic("", ""), lattitude(0), longitude(0) {}
@@ -46,10 +44,21 @@ public:
     }
 
     void printAttribut(std::ostream& out){
-        out << "Nom : " << this->getName() << std::endl;
-        out << "Lattitude : " << this->getLat() << std::endl;
-        out << "Longitude : " << this->getLong() << std::endl;
+        out << "Nom : " << this->getName();
+        out << "Lattitude : " << this->getLat();
+        out << "Longitude : " << this->getLong();
     }
+
+    void save(std::ostream& out) const {
+        out << "{";
+        out << "\"type\": \"Photo\", ";
+        out << "\"name\": \"" << this->getName() << "\", ";
+        out << "\"filename\": \"" << this->getFileName() << "\", ";
+        out << "\"latitude\": " << this->getLat() << ", ";
+        out << "\"longitude\": " << this->getLong();
+        out << "}";
+    }
+
 };
 
 #endif // PHOTO_H
